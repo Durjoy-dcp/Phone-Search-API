@@ -1,6 +1,8 @@
 // console.log("connectd");
 function fetchData() {
-    const url = "https://openapi.programming-hero.com/api/phones?search=iphone";
+    let srchField = document.getElementById('srch').value;
+    srchField = srchField == '' ? "iphone" : srchField;
+    const url = `https://openapi.programming-hero.com/api/phones?search=${srchField}`;
     fetch(url)
         .then(res => res.json())
         .then(data => displayPhone(data.data))
@@ -15,7 +17,7 @@ function displayPhone(data) {
         console.log(item);
         const div = document.createElement('div');
         div.classList.add('col');
-        div.innerHTML = `    <div class="card">
+        div.innerHTML = `<div class="card">
             <img src="${item.image}" class="card-img-top" alt="...">
             <div class="card-body">
                 <h5 class="card-title">${item.phone_name}</h5>
