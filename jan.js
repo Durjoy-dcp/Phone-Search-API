@@ -13,6 +13,12 @@ function fetchData() {
 function displayPhone(data) {
     const parentContainer = document.getElementById('show-phone');
     parentContainer.innerHTML = ``;
+    if (data.length == 0) {
+        document.getElementById('result').classList.remove('d-none');
+    } else {
+        document.getElementById('result').classList.add('d-none');
+
+    }
     data.forEach(item => {
         console.log(item);
         const div = document.createElement('div');
