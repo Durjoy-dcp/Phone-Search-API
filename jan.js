@@ -1,5 +1,6 @@
 // console.log("connectd");
 function fetchData() {
+
     let srchField = document.getElementById('srch').value;
     srchField = srchField == '' ? "iphone" : srchField;
     const url = `https://openapi.programming-hero.com/api/phones?search=${srchField}`;
@@ -20,7 +21,7 @@ function displayPhone(data) {
 
     }
     data.forEach(item => {
-        console.log(item);
+        // console.log(item);
         const div = document.createElement('div');
         div.classList.add('col');
         div.innerHTML = `<div class="card">
@@ -32,5 +33,18 @@ function displayPhone(data) {
             </div>`;
         parentContainer.appendChild(div);
     });
+    toggle(false);
 }
 fetchData();
+function toggle(ok) {
+    if (ok) {
+        document.getElementById('spiner').classList.remove('d-none');
+    } else {
+        document.getElementById('spiner').classList.add('d-none');
+
+    }
+}
+function callingFunction() {
+    toggle(true);
+    fetchData();
+}

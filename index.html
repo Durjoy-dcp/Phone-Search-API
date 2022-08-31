@@ -15,11 +15,20 @@
 
     <section class="text-center my-3 ">
         <input type="text" id="srch">
-        <button class="btn btn-primary" onclick="fetchData()"><i class="fa-solid fa-magnifying-glass"></i></button>
+        <button class="btn btn-primary" onclick="callingFunction()"><i
+                class="fa-solid fa-magnifying-glass"></i></button>
     </section>
     <section>
         <div id="result" class=" text-center text-warning d-none">
             <h2>Not found any results !!</h2>
+        </div>
+        <div id="spiner" class="my-5 d-none">
+            <div class="d-flex justify-content-center">
+                <div class="spinner-border  text-success" role="status">
+                    <span class="visually-hidden">Loading...</span>
+                </div>
+            </div>
+
         </div>
     </section>
 
